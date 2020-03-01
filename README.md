@@ -4,7 +4,7 @@ This is an example of frontend monorepo with several packages:
 
 - **common**: Shared elements for any application (JS)
 - **common2**: Shared elements for any application (TS)
-- **webapp**: Hello world in nodeJS that depends on `common`
+- **webapp2**: An example universal (SSR) client app build in nextJS that depends on `common`
 - **webapp2**: An example universal (SSR) client app build in nextJS + Typescript that depends on `common2`
 
 - [NextJS Bazel Monorepo Example](#nextjs-bazel-monorepo-example)
