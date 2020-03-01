@@ -5,5 +5,6 @@ filegroup(
     srcs = [
         "package.json",
         "yarn.lock",
+        "tsconfig.base.json",
     ],
 )

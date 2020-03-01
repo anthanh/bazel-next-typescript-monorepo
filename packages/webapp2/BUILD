@@ -6,6 +6,8 @@ filegroup(
     name = "config",
     srcs = [
         "package.json",
+        "tsconfig.json",
+        "next.config.js",
     ],
 )
 
@@ -17,9 +19,9 @@ filegroup(
 filegroup(
     name = "webapp2",
     srcs = [
+        "//:config",
         ":config",
         ":sources",
-        "//:config",
     ],
 )
 
