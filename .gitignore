@@ -1,0 +1,19 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# editors
+.vscode
+
+# production
+.next/
+
+# misc
+next-env.d.ts
+.DS_Store
+.env
+*.log
+
+# bazel
+bazel-*

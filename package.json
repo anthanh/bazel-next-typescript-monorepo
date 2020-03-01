@@ -1,0 +1,26 @@
+{
+  "name": "bazel-next-typescript-monorepo",
+  "version": "0.0.1",
+  "description": "JS Monorepo example with bazel",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules packages/webapp2/node_modules",
+    "clean:bazel": "bazelisk clean --expunge",
+    "start:webapp": "bazelisk run //packages/webapp:start",
+    "start:webapp2": "bazelisk run //packages/webapp2:start"
+  },
+  "devDependencies": {
+    "@bazel/bazelisk": "^1.3.0",
+    "@bazel/buildifier": "^0.29.0",
+    "@bazel/ibazel": "^0.12.2",
+    "@bazel/typescript": "^1.3.0"
+  },
+  "author": "anthanh",
+  "license": "MIT"
+}
