@@ -10,9 +10,8 @@ This is an example of frontend monorepo with several packages:
 - [NextJS Bazel Monorepo Example](#nextjs-bazel-monorepo-example)
   - [Prerequisites](#prerequisites)
   - [Available Commands](#available-commands)
-    - [Clean](#clean)
     - [Install](#install)
-    - [Run webapp (JS) (node + common)](#run-webapp-js-node--common)
+    - [Run webapp (JS) (nexJS + common)](#run-webapp-js-nexjs--common)
     - [Run webapp2 (TS) (nexJS + common2)](#run-webapp2-ts-nexjs--common2)
 
 
@@ -24,14 +23,6 @@ This is an example of frontend monorepo with several packages:
 
 ## Available Commands
 
-### Clean
-
-Removes all generated files for every package
-
-```bash
-yarn clean
-```
-
 ### Install
 
 Installs all dependencies for every package
@@ -40,12 +31,14 @@ Installs all dependencies for every package
 yarn
 ```
 
-### Run webapp (JS) (node + common)
+### Run webapp (JS) (nexJS + common)
 
 Installs all dependencies for every package
 
 ```bash
 yarn start:webapp
+// or:
+bazelisk run //packages/webapp:start
 ```
 
 ### Run webapp2 (TS) (nexJS + common2)
@@ -53,5 +46,7 @@ yarn start:webapp
 Installs all dependencies for every package
 
 ```bash
-yarn start:webapp
+yarn start:webapp2
+// or:
+bazelisk run //packages/webapp2:start
 ```
