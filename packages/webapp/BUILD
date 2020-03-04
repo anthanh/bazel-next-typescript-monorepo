@@ -83,3 +83,9 @@ nodejs_image(
     entry_point = "@npm//:node_modules/next/dist/bin/next",
     node_modules = "@npm//:node_modules",
 )
+
+nodejs_image(
+    name = "index",
+    entry_point = "index.js",
+    node_modules = "@npm//:node_modules",
+)
