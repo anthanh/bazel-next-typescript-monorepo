@@ -1,6 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary", "copy_to_bin")
+load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image" )
 
 filegroup(
     name = "config",
@@ -22,6 +23,11 @@ filegroup(
         ":config",
         ":sources",
     ],
+)
+
+copy_to_bin(
+    name = "copy_next",
+    srcs = glob([".next/**"]),
 )
 
 nodejs_binary(
@@ -64,4 +70,16 @@ genrule(
     """,
     tools = [":next"],
     executable = True,
+)
+
+nodejs_image(
+    name = "image",
+    args = ["start ./packages/ssr-client-brand"],
+    data = [
+        ":copy_next",
+        ":webapp",
+        "@npm//:node_modules",
+    ],
+    entry_point = "@npm//:node_modules/next/dist/bin/next",
+    node_modules = "@npm//:node_modules",
 )
