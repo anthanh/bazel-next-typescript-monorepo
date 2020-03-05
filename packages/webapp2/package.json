@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@monorepo/common": "*",
+    "@monorepo/common2": "*",
     "next": "^9.2.2",
     "next-compose-plugins": "^2.2.0",
     "next-transpile-modules": "^3.0.2",

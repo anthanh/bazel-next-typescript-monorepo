@@ -13,6 +13,8 @@ This is an example of frontend monorepo with several packages:
     - [Install](#install)
     - [Run webapp (JS) (nexJS + common)](#run-webapp-js-nexjs--common)
     - [Run webapp2 (TS) (nexJS + common2)](#run-webapp2-ts-nexjs--common2)
+    - [Build webapp docker image](#build-webapp-docker-image)
+    - [Run webapp docker image](#run-webapp-docker-image)
 
 
 ## Prerequisites
@@ -49,4 +51,16 @@ Installs all dependencies for every package
 yarn start:webapp2
 // or:
 bazelisk run //packages/webapp2:start
+```
+
+### Build webapp docker image
+
+```bash
+bazelisk run //packages/webapp:image --platforms=@io_bazel_rules_go//go/toolchain:linux_amd64
+```
+
+### Run webapp docker image
+
+```bash
+docker run -it -p 3000:3000 bazel/packages/webapp:image
 ```
