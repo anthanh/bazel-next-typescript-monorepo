@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@monorepo/common2": "*",
-    "next": "^9.2.2",
+    "next": "^9.3.2",
     "next-compose-plugins": "^2.2.0",
     "next-transpile-modules": "^3.0.2",
     "react": "^16.13.0",
